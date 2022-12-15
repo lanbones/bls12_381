@@ -206,6 +206,16 @@ impl Default for Scalar {
 #[cfg(feature = "zeroize")]
 impl zeroize::DefaultIsZeroes for Scalar {}
 
+impl From<bool> for Scalar {
+    fn from(bit: bool) -> Scalar {
+        if bit {
+            Scalar::one()
+        } else {
+            Scalar::zero()
+        }
+    }
+}
+
 impl Scalar {
     /// Returns zero, the additive identity.
     #[inline]
