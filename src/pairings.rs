@@ -23,7 +23,7 @@ use pairing::MultiMillerLoop;
 /// other until `.final_exponentiation()` is called, which is also expensive.
 #[cfg_attr(docsrs, doc(cfg(feature = "pairings")))]
 #[derive(Copy, Clone, Debug)]
-pub struct MillerLoopResult(pub(crate) Fp12);
+pub struct MillerLoopResult(pub Fp12);
 
 impl Default for MillerLoopResult {
     fn default() -> Self {
