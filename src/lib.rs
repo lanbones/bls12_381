@@ -45,9 +45,11 @@ pub mod notes {
 
 mod scalar;
 
-pub use scalar::Scalar;
 pub use fp::Fp;
+pub use fp12::Fp12;
 pub use fp2::Fp2;
+pub use fp6::Fp6;
+pub use scalar::Scalar;
 
 #[cfg(feature = "groups")]
 mod fp;
