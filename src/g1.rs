@@ -122,6 +122,22 @@ impl Neg for G1Affine {
     }
 }
 
+impl Sub<G1Affine> for G1Affine {
+    type Output = G1Projective;
+
+    fn sub(self, rhs: G1Affine) -> Self::Output {
+        self + (-rhs).to_curve()
+    }
+}
+
+impl Add<G1Affine> for G1Affine {
+    type Output = G1Projective;
+
+    fn add(self, rhs: G1Affine) -> Self::Output {
+        self + rhs.to_curve()
+    }
+}
+
 impl<'a, 'b> Add<&'b G1Projective> for &'a G1Affine {
     type Output = G1Projective;
 
