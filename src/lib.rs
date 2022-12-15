@@ -47,6 +47,7 @@ mod scalar;
 
 pub use scalar::Scalar;
 pub use fp::Fp;
+pub use fp2::Fp2;
 
 #[cfg(feature = "groups")]
 mod fp;
