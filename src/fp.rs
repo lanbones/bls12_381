@@ -3,7 +3,6 @@
 
 use core::fmt;
 use core::ops::{Add, AddAssign, Mul, MulAssign, Neg, Sub, SubAssign};
-use ff::Field;
 use rand_core::RngCore;
 use subtle::{Choice, ConditionallySelectable, ConstantTimeEq, CtOption};
 
@@ -157,36 +156,6 @@ impl<'a, 'b> Mul<&'b Fp> for &'a Fp {
 
 impl_binops_additive!(Fp, Fp);
 impl_binops_multiplicative!(Fp, Fp);
-
-impl Field for Fp {
-    fn zero() -> Fp {
-        Self::zero()
-    }
-
-    fn one() -> Fp {
-        Self::one()
-    }
-
-    fn random(rng: impl RngCore) -> Fp {
-        Fp::random(rng)
-    }
-
-    fn square(&self) -> Self {
-        self.square()
-    }
-
-    fn double(&self) -> Self {
-        self + self
-    }
-
-    fn invert(&self) -> CtOption<Self> {
-        self.invert()
-    }
-
-    fn sqrt(&self) -> CtOption<Self> {
-        self.sqrt()
-    }
-}
 
 impl Fp {
     /// Returns zero, the additive identity.
